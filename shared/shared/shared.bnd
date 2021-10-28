@@ -17,9 +17,10 @@ runfeaturesMerged: ${-runfeatures.*}
 
 -runproperties.base: \
     ${if;(runfeaturesMerged[]=base); \
-        logback.configurationFile=${fileuri;${.}/logback.xml}\
+        logback.configurationFile=${fileuri\\;${.}/logback.xml}\
     }
 
+# Since this does not work, I can't include resources based on the "feature"
 -includeresource.base: \
     ${if;(runfeaturesMerged[]=base); \
         logback.xml=${.}/logback.xml\
@@ -32,5 +33,3 @@ runfeaturesMerged: ${-runfeatures.*}
         bnd.identity\\; id=org.apache.felix.gogo.shell,\
         bnd.identity\\; id=org.apache.felix.gogo.command\
     }
-
--executable: location='${@bsn}-${@version}.jar'

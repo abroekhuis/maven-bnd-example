@@ -3,8 +3,8 @@
 -runfeatures: shell
 
 # This results in a file path which is absolute and specific for the development machine, not useable for export
--runproperties.local: \
-    logback.configurationFile=${fileuri;${.}/logback.xml}
+#-runproperties.local: \
+#    logback.configurationFile=${fileuri;${.}/logback.xml}
 
 # This works for export (combined with the include resource below), but not useable when running using bnd-run:run
 #-runproperties.export: \
